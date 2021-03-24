@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="dist/css/main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    
 
     <title>Oniroco le site spécialiser en ourson en peluche</title>
     <meta name="description" content="Oniroco est le site spécialisé dans la vente de peluche artisanal français ">
@@ -25,21 +26,52 @@
                 </li>
                 <li>
                     <a href="#">Panier</a>
+                    <i class="fas fa-shopping-basket"></i>
                 </li>
             </ul>
         </nav>
     </header>
-
     <main class="main">
+
         <h1>Bienvenue chez Orinoco</h1>
-        <div class="product-list">
-            <figure id="teddies-list">
-                
-            </figure>
+
+        <!-- PRODUCT CONTAINER & LOADING BOXES -->
+        <div id="productsList">
+            <div class="bg-oniPink animate-pulse h-80"></div>
+            <div class="bg-oniPink animate-pulse h-80"></div>
+            <div class="bg-oniPink animate-pulse h-80"></div>
+            <div class="bg-oniPink animate-pulse h-80"></div>
+            <div class="bg-oniPink animate-pulse h-80"></div>
+            <div class="bg-oniPink animate-pulse h-80"></div>
         </div>
+        <!-- PRODUCT CONTAINER & LOADING BOXES -->
+
+
+        <template id="product">
+            <div class="list-none">
+                <a id="productLink" href="">
+                    <figure>
+                        <img id="productImage" src="" alt="">
+                        <figcaption>
+                            <div class="productItems">
+                                <h2 id="productName"></h2>
+                                <span id="productPrice" class="text-sm font-bold bg-white px-2 py-1 rounded"></span>
+                            </div>
+                            <p id="productDescription" class="text-black text-opacity-80 text-sm text-justify"></p>
+                        </figcaption>
+                    </figure>
+                </a>
+            </div>
+        </template>
     </main>
-
-    <script src="./index.js"></script>
+    <footer>
+        <ul>
+            <li>A propos</li>
+            <li>Nous contactez</li>
+            <li>Mention légale</li>
+            <li>C.G.V</li>
+        </ul>
+    </footer>
+        <script src="./index.js"></script>
 </body>
-
 </html>
