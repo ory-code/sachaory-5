@@ -1,4 +1,4 @@
-;(async () => {
+(async () => {
     const products = await getProducts()
     hydratePage(products)
   })()
@@ -9,7 +9,7 @@
       .then((products) => products)
       .catch((error) => {
         alert(
-          "La connexion au serveur n'a pas pu être effectué. Cela est certainement lié à l'endormissement du serveur Heroku, veuillez attendre quelques secondes le temps qu'il sorte de son lit puis réesayez"
+          "La connexion au serveur n'a pas pu être effectué."
         )
       })
   }

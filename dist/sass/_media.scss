@@ -1,0 +1,15 @@
+@media (min-width: 300px) and (max-width:800px) {
+
+main {
+    #productsList {
+        figure {
+            flex-direction: column;
+            img {
+                height: 200px;
+                width: 250px;
+                border-radius: 1.5rem 1.5rem 0 0;
+            }
+        }
+    }
+}
+}
