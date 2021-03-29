@@ -22,7 +22,9 @@ header {
             font-family: indie flower;
             font-size: 25px;
             font-weight: 600;
-            justify-content: space-around;
+            justify-content: flex-end;
+            margin-right: 15%;
+            
             li {
                 
                 transition: 1s;

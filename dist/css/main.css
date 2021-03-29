@@ -29,8 +29,10 @@ header nav ul {
   font-family: indie flower;
   font-size: 25px;
   font-weight: 600;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 15%;
 }
 
 header nav ul li {

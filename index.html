@@ -9,15 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <script src="./index.js" defer></script>
+    
 </head>
 
 <body>
     <header>
         <nav class="navbar">
             <ul>
-                <li>
-                    <a href="./index.html">Accueil</a>
-                </li>
                 <li>
                     <a href="#">Panier</a>
                 </li>
@@ -28,24 +26,24 @@
         <h1>Bienvenue chez Orinoco</h1>
         <!-- PRODUCT CONTAINER & LOADING BOXES -->
         <div id="productsList">
-            <div class="bg-oniPink animate-pulse h-80"></div>
-            <div class="bg-oniPink animate-pulse h-80"></div>
-            <div class="bg-oniPink animate-pulse h-80"></div>
-            <div class="bg-oniPink animate-pulse h-80"></div>
-            <div class="bg-oniPink animate-pulse h-80"></div>
+            <div class="teddiesCard"></div>
+            <div class="teddiesCard"></div>
+            <div class="teddiesCard"></div>
+            <div class="teddiesCard"></div>
+            <div class="teddiesCard"></div>
         </div>
         <!-- PRODUCT CONTAINER & LOADING BOXES -->
         <template id="product">
-            <div class="list-none">
+            <div class="teddies-template">
                 <a id="productLink" href="">
                     <figure>
                         <img id="productImage" src="" alt="">
                         <figcaption>
                             <div class="productItems">
                                 <h2 id="productName"></h2>
-                                <span id="productPrice" class="text-sm font-bold bg-white px-2 py-1 rounded"></span>
+                                <span id="productPrice" ></span>
                             </div>
-                            <p id="productDescription" class="text-black text-opacity-80 text-sm text-justify"></p>
+                            <p id="productDescription"></p>
                         </figcaption>
                     </figure>
                 </a>

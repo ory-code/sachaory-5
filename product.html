@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Oniroco le site spécialiser en ourson en peluche</title>
@@ -8,7 +9,7 @@
     <link rel="stylesheet" href="dist/css/main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <script src="./index.js" defer></script>
+    <script src="./product.js" defer></script>
 </head>
 
 <body>
@@ -24,4 +25,29 @@
             </ul>
         </nav>
     </header>
+    <h1>Votre nouveau compagnon</h1>
+    <div id="product-show"></div>
+       <template id="product-teddies">
+                <a id="productLink" href="">
+                    <figure>
+                        <img id="productImage" src="" alt="">
+                        <figcaption>
+                            <div class="productItems">
+                                <h2 id="productName"></h2>
+                                <span id="productPrice" ></span>
+                            </div>
+                            <p id="productDescription"></p>
+                        </figcaption>
+                        <h2>Voici les couleurs disponible pour votre Ourson</h2>
+                        <div id="productColors">
+                            <template id="productColor"></template>
+                        </div>
+                        <button id="addToCart">Ajouter au panier pour <span id="productPrice"></span></button>
+                    </figure>
+                </a>
+            </div>
+        </template>
+        
+</body>
 
+</html>

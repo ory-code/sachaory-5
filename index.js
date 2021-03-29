@@ -14,12 +14,12 @@
       })
   }
   
-  function hydratePage(products) {
+  function hydratePage(productsPara) {
     // Remove loading boxes
     document.getElementById('productsList').innerHTML = ''
   
     // Loop over all products and displays them
-    products.forEach((product) => {
+    productsPara.forEach((product) => {
       displayProduct(product)
     })
   }
@@ -36,7 +36,7 @@
     cloneElt.getElementById('productName').textContent = product.name
     cloneElt.getElementById('productPrice').textContent = `${product.price / 100}.00 €`
     cloneElt.getElementById('productDescription').textContent = product.description
-    cloneElt.getElementById('productLink').href = `/products.html?id=${product._id}`
+    cloneElt.getElementById('productLink').href = `/product.html?id=${product._id}`
   
     // Display template
     document.getElementById('productsList').appendChild(cloneElt)
