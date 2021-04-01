@@ -1,4 +1,9 @@
 
+    (async () => {
+        const productId = getProduct()
+        const idData = id
+        hydratePage()
+      })()
   
   
   
@@ -8,11 +13,8 @@
       const response = await fetch(`http://localhost:3000/api/teddies/${id}`)
       const product = await response.json()
       return product
-
   }
   
-
-
   function hydratePage(product) {
       displayProduct(product)
   }
