@@ -27,26 +27,22 @@
     </header>
     <main id="main">
         <h1>Votre nouveau compagnon</h1>
-        <div id="productsList">
-            <div class="teddiesCard"></div>
+        <div id="productsList"></div>
+    </main>
+    <template id="templateProduct">
+        <div class="teddies-template">
+            <figure>
+                <img id="productImage" src="" alt="">
+                <figcaption>
+                    <div class="productItems">
+                        <h2 id="productName"></h2>
+                        <span id="productPrice" ></span>
+                    </div>
+                    <p id="productDescription"></p>
+                </figcaption>
+            </figure>
         </div>
-        <template id="teddiesProduct">
-            <div class="teddies-template">
-                <a id="productLink" href="">
-                    <figure>
-                        <img id="productImage" src="" alt="">
-                        <figcaption>
-                            <div class="productItems">
-                                <h2 id="productName"></h2>
-                                <span id="productPrice" ></span>
-                            </div>
-                            <p id="productDescription"></p>
-                        </figcaption>
-                    </figure>
-                </a>
-            </div>
-        </template>
-        </template>
+    </template>
     </main>
 
 
