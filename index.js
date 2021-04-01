@@ -3,7 +3,7 @@
     hydratePage(products)
   })()
   
-  async function getProducts() {
+  function getProducts() {
     return fetch("http://localhost:3000/api/teddies")
       .then((httpBodyResponse) => httpBodyResponse.json())
       .then((products) => products)

@@ -25,9 +25,13 @@
             </ul>
         </nav>
     </header>
-    <h1>Votre nouveau compagnon</h1>
-    <div id="product-show"></div>
-       <template id="product-teddies">
+    <main id="main">
+        <h1>Votre nouveau compagnon</h1>
+        <div id="productsList">
+            <div class="teddiesCard"></div>
+        </div>
+        <template id="teddiesProduct">
+            <div class="teddies-template">
                 <a id="productLink" href="">
                     <figure>
                         <img id="productImage" src="" alt="">
@@ -38,16 +42,15 @@
                             </div>
                             <p id="productDescription"></p>
                         </figcaption>
-                        <h2>Voici les couleurs disponible pour votre Ourson</h2>
-                        <div id="productColors">
-                            <template id="productColor"></template>
-                        </div>
-                        <button id="addToCart">Ajouter au panier pour <span id="productPrice"></span></button>
                     </figure>
                 </a>
             </div>
         </template>
-        
+        </template>
+    </main>
+
+
+
 </body>
 
 </html>
