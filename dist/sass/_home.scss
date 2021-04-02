@@ -13,7 +13,7 @@ a {
 header {
     background-color: wheat;
     display: flex;
-    justify-content: flex-end;
+    
     nav {
        width: 100%;
         ul {
@@ -22,11 +22,10 @@ header {
             font-family: indie flower;
             font-size: 25px;
             font-weight: 600;
-            justify-content: space-evenly;
             margin-right: 15%;
+            justify-content: space-between;
             
             li {
-                
                 transition: 1s;
                 &:hover {
                     transform: scale(1.2);
@@ -61,11 +60,12 @@ main {
             box-shadow: 8px 8px 12px grey;
             cursor: pointer;
             transition: 1s;
+            
 
 
             img {
                 width: 300px;
-                border-radius: 1.5rem 0 0 1.5rem;
+                border-radius: 1.5rem 0 0 0;
             }
 
             figcaption {

@@ -1,0 +1,19 @@
+main {
+    #productsList {
+        figure {
+            display: flex;
+            flex-direction: column;
+            
+           //padding: 1%;
+            button {
+                border-radius: 1.5rem;
+                background-color: khaki;
+                font-family: indie flower;
+                font-weight: 600;
+                height: 35px;
+                font-size: large;
+                margin: 1%;
+            }
+        }
+    }
+}

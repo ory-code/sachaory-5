@@ -1,4 +1,5 @@
 
+
 const id = (new URL(document.location)).searchParams.get('id'); 
 
 function getProduct() {
@@ -24,7 +25,7 @@ function displayProduct(product) {
     cloneElt.getElementById('productName').textContent = product.name
     cloneElt.getElementById('productPrice').textContent = `${product.price / 100}.00 €`
     cloneElt.getElementById('productDescription').textContent = product.description
-
+    cloneElt.getElementById('productColorsOption').textContent = product.colors
     document.getElementById('productsList').appendChild(cloneElt)
 }
 
