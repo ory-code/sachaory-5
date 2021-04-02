@@ -90,12 +90,15 @@ footer {
     background-color: wheat;
   
      ul {
+
          width: 100%;
          display: flex;
         list-style: none;
         font-size: 18px;
-        
         justify-content: space-around;
+        li {
+            cursor: pointer;
+        }
 
     }
 }

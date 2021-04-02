@@ -122,6 +122,10 @@ footer ul {
       justify-content: space-around;
 }
 
+footer ul li {
+  cursor: pointer;
+}
+
 @media (min-width: 300px) and (max-width: 800px) {
   main #productsList figure img {
     border-radius: 1.5rem 1.5rem 0 0;
@@ -176,5 +180,24 @@ main #productsList figure button {
   height: 35px;
   font-size: large;
   margin: 1%;
+}
+
+main table {
+  border-radius: 1.5rem;
+  background-color: lemonchiffon;
+  width: 100%;
+}
+
+main table th {
+  border: solid black;
+}
+
+main table td {
+  border: solid black;
+}
+
+main table td form select {
+  width: 100%;
+  border: lightblue solid;
 }
 /*# sourceMappingURL=main.css.map */
