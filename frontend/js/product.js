@@ -1,7 +1,7 @@
 const id = (new URL(document.location)).searchParams.get('id');
 
 function getProduct() {
-    return fetch(`http://localhost:3000/api/teddies/${id}`)
+    return fetch(`https://ab-p5-api.herokuapp.com/api/teddies/${id}`)
         .then((response) => response.json())
         .then((product) => product)
         .catch((error) => {

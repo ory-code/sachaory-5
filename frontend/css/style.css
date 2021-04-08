@@ -1,0 +1,123 @@
+body {
+    margin: 0 auto;
+    background-color: #dfdfdf;
+    font-family: roboto;
+
+}
+
+
+header {
+    background-color: #c3c3c3;
+    display: flex;
+    justify-content: flex-end;
+
+
+}
+
+ul {
+    list-style: none;
+    margin-right: 60px;
+}
+
+li {
+    font-size: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+main {
+    margin: 25px;
+}
+
+#productsList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+figure {
+    display: flex;
+    width: 800px;
+    border-radius: 1.5rem;
+    border: black solid;
+    margin: 50px;
+    box-shadow: 8px 8px 12px grey;
+    cursor: pointer;
+    transition: 1s;
+    background-color: white;
+}
+
+.imgFig {
+    width: 300px;
+    border-radius: 1.5rem 0 0 1.5rem;
+}
+
+.figCap {
+    display: flex;
+    padding: 25px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* basket page*/
+table {
+    border: solid 1px ;
+    justify-content:center;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#totalDescription {
+    border: 2px;
+    text-align: center;
+}
+#totalLine{
+    border: 1px;
+}
+#totalPrice {
+    border: 1px;
+}
+
+.formBasket {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+input {
+    border-radius: 0.5rem;
+    border: solid;
+}
+
+.btnOrder {
+    margin-top: 15px;
+    color: black;
+    font-family: roboto;
+    font-size: 15px;
+    background-color: white;
+}
+
+
+
+
+footer {
+    display: flex;
+    background-color: #c3c3c3;
+    justify-content: center;
+}
+
+.footerUl {
+    display: flex;
+
+}
+
+.footerLi {
+    margin-right: 15px;
+
+}

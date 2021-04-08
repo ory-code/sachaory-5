@@ -6,11 +6,12 @@
     <title>Oniroco le site spécialiser en ourson en peluche</title>
     <meta name="description" content="Oniroco est le site spécialisé dans la vente de peluche artisanal français ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <script src="./basket.js" defer></script>
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <script src="./js/basket.js" defer></script>
+
 </head>
 
 <body>
@@ -24,24 +25,30 @@
         </nav>
     </header>
     <main>
+        <h1 class="h1Basket">Votre Panier</h1>
         <table>
             <thead>
                 <tr>
                     <th>Nom</th>
                     <th scope="col">Quantité</th>
                     <th scope="col">Prix</th>
+                    <th>Total</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td></td>
-                    <td ></td>
-                    <td ></td>
+                    <td>le nom de ton produit</td>
+                    <td>la quantité</td>
+                    <td>le prix</td>
+                </tr>
+                <tr id="totalDescription">
+                    <td id="totalLine">Total</td>
+                    <td id="totalPrice"></td>
                 </tr>
             </tbody>
         </table>
 
-        <form>
+        <form class="formBasket">
             <h2>Vos coordonnées</h2>
             <!--First name-->
             <label for="firstName">Prénom:</label>
@@ -50,7 +57,7 @@
             <!--Last name-->
             <label for="lastName">Nom:</label>
             <input type="text" id="lastName" name="lastName" required>
-            
+
             <!--Email-->
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
@@ -64,7 +71,7 @@
             <input type="text" id="city" name="city" required>
 
             <!--Submit Button-->
-            <input id="order" type="submit" value="Commander" disabled="disabled">
+            <input  class="btnOrder" id="order" type="submit" value="Commander" disabled="disabled">
         </form>
 
 

@@ -2,14 +2,14 @@
     const products = await getProducts()
     hydratePage(products)
   })()
-  
+  //http://localhost:3000/api/teddies
   function getProducts() {
-    return fetch("http://localhost:3000/api/teddies")
+    return fetch("https://ab-p5-api.herokuapp.com/api/teddies")
       .then((httpBodyResponse) => httpBodyResponse.json())
       .then((products) => products)
       .catch((error) => {
         alert(
-          "La connexion au serveur n'a pas pu être effectué."
+          "La connexion au serveur n'a pas pu être effectué, MongoDB Atlas est en pls !"
         )
       })
   }

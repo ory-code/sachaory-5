@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Oniroco le site spécialiser en ourson en peluche</title>
     <meta name="description" content="Oniroco est le site spécialisé dans la vente de peluche artisanal français ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./front-end/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <script src="./index.js" defer></script>
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <script src="./js/index.js" defer></script>
+
 </head>
 
 <body>
@@ -37,11 +39,11 @@
             <div class="teddies-template">
                 <a id="productLink" href="">
                     <figure>
-                        <img id="productImage" src="" alt="">
-                        <figcaption>
+                        <img class="imgFig" id="productImage" src="" alt="">
+                        <figcaption class="figCap">
                             <div class="productItems">
                                 <h2 id="productName"></h2>
-                                <span id="productPrice" ></span>
+                                <span id="productPrice"></span>
                             </div>
                             <p id="productDescription"></p>
                         </figcaption>
@@ -51,13 +53,15 @@
         </template>
     </main>
     <footer>
-        <ul>
-            <li>A propos</li>
-            <li>Nous contactez</li>
-            <li>Mention légale</li>
-            <li>C.G.V</li>
+        <ul class="footerUl">
+            <li class="footerLi">A propos</li>
+            <li class="footerLi">Nous contactez</li>
+            <li class="footerLi">Mention légale</li>
+            <li class="footerLi">Mention légale</li>
+            <li class="footerLi">C.G.V</li>
         </ul>
     </footer>
-        
+
 </body>
+
 </html>
