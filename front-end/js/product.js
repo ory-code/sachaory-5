@@ -1,6 +1,4 @@
-
-
-const id = (new URL(document.location)).searchParams.get('id'); 
+const id = (new URL(document.location)).searchParams.get('id');
 
 function getProduct() {
     return fetch(`http://localhost:3000/api/teddies/${id}`)
@@ -8,7 +6,7 @@ function getProduct() {
         .then((product) => product)
         .catch((error) => {
             alert(
-            "La connexion au serveur n'a pas pu être effectué."
+                "La connexion au serveur n'a pas pu être effectué."
             )
         })
 }
@@ -29,8 +27,25 @@ function displayProduct(product) {
     document.getElementById('productsList').appendChild(cloneElt)
 }
 
+const templateElt = document.querySelector('#templateProduct')
+const btn = document.querySelector('#addToCart');
+const lineName = document.querySelector('#name')
+const lineQuantity = document.querySelector('#quantity')
+const linePrice = document.querySelector('#price')
+
+const saveProductToLocalStorage = (product) => {
+    //créée une fonction qui va mettre 
+    localStorage.setItem('basket', JSON.stringify(product))
+}
+btn.addEventListener('click', () => {
+    alert ('le produit a bien été ajouté au panier')
+    const monproduit = {nom:'Norber'}
+    saveProductToLocalStorage(monproduit)
+})
+
+
 
 (async () => {
     const product = await getProduct()
     hydratePage(product)
-}) ()
+})()

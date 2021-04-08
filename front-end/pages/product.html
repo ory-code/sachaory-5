@@ -6,7 +6,7 @@
     <title>Oniroco le site spécialiser en ourson en peluche</title>
     <meta name="description" content="Oniroco est le site spécialisé dans la vente de peluche artisanal français ">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dist/css/main.css">
+    <link rel="stylesheet" href="./frontend/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <script src="./product.js" defer></script>
@@ -28,6 +28,7 @@
     <main id="main">
         <h1>Votre nouveau compagnon</h1>
         <div id="productsList"></div>
+        <button id="addToCart" type="submit"> Ajouter votre futur compagnon au panier</button>
     </main>
     <template id="templateProduct">
         <div class="teddies-template">
@@ -44,7 +45,6 @@
                         <option id="productColorsOption"></option>
                     </select>
                 </figcaption>
-                <button id="addToCart"> Ajouter votre futur compagnon au panier</button>
             </figure>
         </div>
     </template>
