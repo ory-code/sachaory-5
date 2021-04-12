@@ -8,51 +8,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <script src="./js/product.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-            <ul>
-                <li>
+    <header class="headerProduct">
+        <nav class="navbarProduct">
+            <ul class="ulProduct">
+                <li class="liProduct">
                     <a href="./index.html">Accueil</a>
                 </li>
-                <li>
+                <li class="liProduct">
                     <a href="./basket.html">Panier</a>
                 </li>
             </ul>
         </nav>
     </header>
-    <main id="main">
-        <h1>Votre nouveau compagnon</h1>
+    <h1>Votre nouveau compagnon</h1>
+    <main id="mainProduct">
         <div id="productsList"></div>
         <button id="addToCart" type="submit"> Ajouter votre futur compagnon au panier</button>
+        <template id="templateProduct">
+            <div class="teddies-template">
+                <figure class="figProduct">
+                    <img class="imgProduct" id="productImage" src="" alt="">
+                    <figcaption class="figCapProduct">
+                        <div class="productItems">
+                            <h2 id="productName"></h2>
+                            <span id="productPrice"></span>
+                        </div>
+                        <p id="productDescription"></p>
+                        <label>Quel couleurs souhaitez-vous ?</label>
+                        <select>
+                            <option id="productColorsOption"></option>
+                        </select>
+                    </figcaption>
+                </figure>
+            </div>
+        </template>
     </main>
-    <template id="templateProduct">
-        <div class="teddies-template">
-            <figure>
-                <img class="imgProduct" id="productImage" src="" alt="">
-                <figcaption class="figCapProduct">
-                    <div class="productItems">
-                        <h2 id="productName"></h2>
-                        <span id="productPrice"></span>
-                    </div>
-                    <p id="productDescription"></p>
-                    <label>Quel couleurs souhaitez-vous ?</label>
-                    <select>
-                        <option id="productColorsOption"></option>
-                    </select>
-                </figcaption>
-            </figure>
-        </div>
-    </template>
-
-
-
-
+    <footer>
+        <ul class="footerUl">
+            <li class="footerLi">A propos</li>
+            <li class="footerLi">Nous contactez</li>
+            <li class="footerLi">Mention légale</li>
+            <li class="footerLi">Mention légale</li>
+            <li class="footerLi">C.G.V</li>
+        </ul>
+    </footer>
 </body>
 
 </html>

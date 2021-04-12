@@ -30,8 +30,8 @@
             <thead>
                 <tr>
                     <th>Nom</th>
-                    <th scope="col">Quantité</th>
-                    <th scope="col">Prix</th>
+                    <th>Quantité</th>
+                    <th>Prix</th>
                     <th>Total</th>
                 </tr>
             </thead>
@@ -42,11 +42,12 @@
                     <td>le prix</td>
                 </tr>
                 <tr id="totalDescription">
-                    <td id="totalLine">Total</td>
+                    <td colspan="3" id="totalLine">Total</td>
                     <td id="totalPrice"></td>
                 </tr>
             </tbody>
         </table>
+
 
         <form class="formBasket">
             <h2>Vos coordonnées</h2>
@@ -71,17 +72,19 @@
             <input type="text" id="city" name="city" required>
 
             <!--Submit Button-->
-            <input  class="btnOrder" id="order" type="submit" value="Commander" disabled="disabled">
+            <input class="btnOrder" id="order" type="submit" value="Commander" disabled="disabled">
         </form>
-
-
-
-
     </main>
-
-
-
-
+    <br>
+    <footer>
+        <ul class="footerUl">
+            <li class="footerLi">A propos</li>
+            <li class="footerLi">Nous contactez</li>
+            <li class="footerLi">Mention légale</li>
+            <li class="footerLi">Mention légale</li>
+            <li class="footerLi">C.G.V</li>
+        </ul>
+    </footer>
 </body>
 
 </html>

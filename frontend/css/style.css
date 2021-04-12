@@ -1,26 +1,22 @@
 body {
-    margin: 0 auto;
-    background-color: #dfdfdf;
+    margin: 0;
     font-family: roboto;
-
 }
 
-
 header {
-    background-color: #c3c3c3;
     display: flex;
     justify-content: flex-end;
-
-
+    background: linear-gradient(45deg, #ebccf7, #ffcd6f, transparent);
 }
 
 ul {
     list-style: none;
-    margin-right: 60px;
+
 }
 
 li {
-    font-size: 25px;
+    font-size: 18px;
+    margin-right: 25px;
 }
 
 a {
@@ -28,9 +24,10 @@ a {
     color: initial;
 }
 
-main {
-    margin: 25px;
+h1 {
+    margin-left: 35px;
 }
+
 
 #productsList {
     display: flex;
@@ -42,11 +39,11 @@ figure {
     display: flex;
     width: 800px;
     border-radius: 1.5rem;
-    border: black solid;
+    border: #dfdfdf solid;
     margin: 50px;
     box-shadow: 8px 8px 12px grey;
     cursor: pointer;
-    transition: 1s;
+
     background-color: white;
 }
 
@@ -62,37 +59,109 @@ figure {
     flex-direction: column;
 }
 
-/* basket page*/
-table {
-    border: solid 1px ;
-    justify-content:center;
-    width: 100%;
+/*productpage*/
+.headerProduct {
+    display: flex;
+
+
+}
+
+.ulProduct {
+    display: flex;
+}
+
+.liProduct {
+    margin-right: 30px;
+}
+
+#mainProduct {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    
+}
+#productsList {
+    display: flex;
+}
+
+
+.imgProduct {
+    width: 350px;
+    height: 280px;
+    border-radius: 1.5rem;
+}
+
+.figCapProduct {
+    padding: 15px;
+}
+select {
+    border-radius: 1rem;
+}
+
+#addToCart {
+    height: 30px;
+    background : linear-gradient(to right,#dca5ff, white);
+    font-size: 20px;
+    border-radius: 1.5rem;
+    box-shadow: grey 8px 8px 12px;
+    width: 400px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+
+
+
+
+/* basket page*/
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+table {
+    border: solid 1px;
     justify-content: center;
+    width: 100%;
+    
+}
+
+td {
+    border: solid black 1px;
 }
 
 #totalDescription {
-    border: 2px;
+
+    background-color: #ebccf7;
+
+}
+
+#totalLine {
+    border: none;
     text-align: center;
 }
-#totalLine{
-    border: 1px;
-}
+
 #totalPrice {
-    border: 1px;
+    text-align: center;
+
 }
 
 .formBasket {
-
+    margin: 2%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 50%;
+    
 }
-
+label {
+    margin: 1%;
+}
 input {
-    border-radius: 0.5rem;
-    border: solid;
+
+    border: solid 1px lightgray;
+    margin: 1%;
 }
 
 .btnOrder {
@@ -100,24 +169,11 @@ input {
     color: black;
     font-family: roboto;
     font-size: 15px;
-    background-color: white;
+    background : linear-gradient(to right,#dca5ff, white);
 }
-
-
-
 
 footer {
     display: flex;
-    background-color: #c3c3c3;
-    justify-content: center;
-}
-
-.footerUl {
-    display: flex;
-
-}
-
-.footerLi {
-    margin-right: 15px;
-
+    background: linear-gradient(45deg, #ffcd6f, #ebccf7, transparent);
+    height: max-content;
 }

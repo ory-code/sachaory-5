@@ -34,14 +34,14 @@ const lineQuantity = document.querySelector('#quantity')
 const linePrice = document.querySelector('#price')
 
 const saveProductToLocalStorage = (product) => {
-    //créée une fonction qui va mettre 
+    //créée une fonction qui va mettre au local storage
     localStorage.setItem('basket', JSON.stringify(product))
 }
-btn.addEventListener('click', () => {
-    alert ('le produit a bien été ajouté au panier')
-    const monproduit = {nom:'Norber'}
-    saveProductToLocalStorage(monproduit)
-})
+// btn.addEventListener('click', () => {
+//     alert ('le produit a bien été ajouté au panier')
+//     const monproduit = {nom:'Norber'}
+//     saveProductToLocalStorage(monproduit)
+// })
 
 
 
