@@ -33,19 +33,25 @@ const lineName = document.querySelector('#name')
 const lineQuantity = document.querySelector('#quantity')
 const linePrice = document.querySelector('#price')
 
+
+
+
 const saveProductToLocalStorage = (product) => {
     //créée une fonction qui va mettre au local storage
     localStorage.setItem('basket', JSON.stringify(product))
 }
-// btn.addEventListener('click', () => {
-//     alert ('le produit a bien été ajouté au panier')
-//     const monproduit = {nom:'Norber'}
-//     saveProductToLocalStorage(monproduit)
-// })
-
 
 
 (async () => {
     const product = await getProduct()
     hydratePage(product)
 })()
+
+
+btn.addEventListener('click', () => {
+    alert('le produit a bien été ajouté au panier')
+    const productName = getElementById('productName').value
+    const productPrice = getElementById('product.Price').value
+    localStorage.setItem(productName)
+    //saveProductToLocalStorage(monproduit)
+})
