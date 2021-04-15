@@ -1,3 +1,5 @@
+'use strict';
+
 const id = (new URL(document.location)).searchParams.get('id');
 
 function getProduct() {
@@ -38,20 +40,32 @@ const linePrice = document.querySelector('#price')
 
 const saveProductToLocalStorage = (product) => {
     //créée une fonction qui va mettre au local storage
-    localStorage.setItem('basket', JSON.stringify(product))
+    
+    if (localStorage.getItem('basket') == null) {
+        localStorage.setItem('basket', JSON.stringify([product]))
+    } else {
+        //stocker produits dans une variable tout ce qui est dans le local storage
+        //créée une deuxieme variable qui va contenir l'id du produit avec celui qui est dans le storage methode filter
+        //si la longeur du tableau du produit déjà sélectionner est supérieur à zéro augmente de 1 la quantité sinon else on ajoute dans le tableau 
+        //après le dernier else on redefini le local storage comme la ligne 45 
+        
+
+    }
+    
 }
 
 
 (async () => {
-    const product = await getProduct()
-    hydratePage(product)
+    const teddy = await getProduct()
+    hydratePage(teddy)
+    btn.addEventListener('click', (event) => {
+        
+        //alert('le produit a bien été ajouté au panier')
+        
+        console.log();
+        saveProductToLocalStorage(teddy)
+
+    })
 })()
 
 
-btn.addEventListener('click', () => {
-    alert('le produit a bien été ajouté au panier')
-    const productName = getElementById('productName').value
-    const productPrice = getElementById('product.Price').value
-    localStorage.setItem(productName)
-    //saveProductToLocalStorage(monproduit)
-})
