@@ -26,7 +26,7 @@
     </header>
     <main>
         <h1 class="h1Basket">Votre Panier</h1>
-        <table class="basketProduct">
+        <!-- <table class="basketProduct">
             <thead>
                 <tr>
                     <th>Nom</th>
@@ -46,7 +46,42 @@
                     <td id="totalPrice"></td>
                 </tr>
             </tbody>
-        </table>
+        </table> -->
+        <section class="basketSection">
+            <div>
+                <table class="basketProduct ">
+                    <thead>
+                        <tr>
+                            <td class="title">Vos Produits</td>
+                            <td class="quantite">Quantité</td>
+                            <td class="price">Prix Unitaire</td>
+                            <td class="pricetot">Prix Total</td>
+                        </tr>
+                    </thead>
+                    <tbody class="container">
+                    </tbody>
+                </table>
+                <div class="pos-btn">
+                    <div class="total">
+                        <div class="/">Prix Total Panier :</div>
+                        <div class="prixtotal"></div>
+                    </div>
+
+                    <div>
+                        <button id="btnsupp" class="btnBasket" role="button">Vider le Panier</button>
+                    </div>
+                </div>
+                <template id="productrow">
+                    <tr>
+                        <td class="title"></td>
+                        <td class="quantite"></td>
+                        <td class="price"></td>
+                        <td class="pricetot"></td>
+                        <td class="totalpanier"></td>
+                    </tr>
+                </template>
+            </div>
+        </section>
 
 
         <form class="formBasket">

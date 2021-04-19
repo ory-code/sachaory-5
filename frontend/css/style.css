@@ -182,10 +182,13 @@ td {
 label {
     margin: 1%;
 }
-input {
+input{
 
     border: solid 1px lightgray;
     margin: 1%;
+}
+input:required {
+    border: solid 1px red;
 }
 
 .btnOrder {
