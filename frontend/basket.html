@@ -26,30 +26,9 @@
     </header>
     <main>
         <h1 class="h1Basket">Votre Panier</h1>
-        <!-- <table class="basketProduct">
-            <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Quantité</th>
-                    <th>Prix</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td id="nameStorage"></td>
-                    <td id="quantityStorage"></td>
-                    <td id="priceStorage"></td>
-                </tr>
-                <tr id="totalDescription">
-                    <td colspan="3" id="totalLine">Total</td>
-                    <td id="totalPrice"></td>
-                </tr>
-            </tbody>
-        </table> -->
         <section class="basketSection">
-            <div>
-                <table class="basketProduct ">
+            <div class="basket">
+                <table class="basketProduct">
                     <thead>
                         <tr>
                             <td class="title">Vos Produits</td>
@@ -63,12 +42,8 @@
                 </table>
                 <div class="pos-btn">
                     <div class="total">
-                        <div class="/">Prix Total Panier :</div>
+                        <div class="totalPrice">Prix Total Panier :</div>
                         <div class="prixtotal"></div>
-                    </div>
-
-                    <div>
-                        <button id="btnsupp" class="btnBasket" role="button">Vider le Panier</button>
                     </div>
                 </div>
                 <template id="productrow">
@@ -107,7 +82,7 @@
             <input type="text" id="city" name="city" required>
 
             <!--Submit Button-->
-            <input class="btnOrder" id="order" type="submit" value="Commander" disabled="disabled">
+            <button class="btnOrder" id="orderBtn" type="submit" disabled="disabled">Commander</button>
         </form>
     </main>
     <br>

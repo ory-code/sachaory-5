@@ -62,23 +62,25 @@ h1 {
 
 
 @media (max-width:1000px) {
-    .figProduct{
+    .figProduct {
         display: flex;
         flex-direction: column;
         align-items: center;
         max-width: 250px;
         border: solid 1px gray;
     }
-   #productImage {
-       width: 250px;
-       border-radius: 1.5rem 1.5rem 0 0;
-   }
-#addToCart {
-    
-       width: 100px;
-       font-size: 18px;
-}
-   
+
+    #productImage {
+        width: 250px;
+        border-radius: 1.5rem 1.5rem 0 0;
+    }
+
+    #addToCart {
+
+        width: 100px;
+        font-size: 18px;
+    }
+
 
 }
 
@@ -101,8 +103,9 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
+
 #productsList {
     display: flex;
 }
@@ -117,13 +120,14 @@ h1 {
 .figCapProduct {
     padding: 15px;
 }
+
 select {
     border-radius: 1rem;
 }
 
 #addToCart {
     text-align: center;
-    background : linear-gradient(to right,#dca5ff, white);
+    background: linear-gradient(to right, #dca5ff, white);
     font-size: 23px;
     border-radius: 1.5rem;
     box-shadow: grey 8px 8px 12px;
@@ -143,28 +147,39 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
+
+section {
+    width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.basket {
+    width: inherit;
+}
+
 .basketProduct {
     border: solid 1px;
     justify-content: center;
-    width: 80%;
+    width: 100%;
 }
 
 td {
     border: solid black 1px;
 }
 
-#totalDescription {
-
-    background-color: #ebccf7;
-
+.pos-btn {
+    justify-content: center;
+    display: flex;
 }
 
-#totalLine {
-    border: none;
-    text-align: center;
-}
+
+
+
 
 #totalPrice {
     text-align: center;
@@ -177,26 +192,26 @@ td {
     flex-direction: column;
     justify-content: center;
     width: 50%;
-    
+
 }
+
 label {
     margin: 1%;
 }
-input{
+
+input {
 
     border: solid 1px lightgray;
     margin: 1%;
 }
-input:required {
-    border: solid 1px red;
-}
+
 
 .btnOrder {
     margin-top: 15px;
     color: black;
     font-family: roboto;
     font-size: 15px;
-    background : linear-gradient(to right,#dca5ff, white);
+    background: linear-gradient(to right, #dca5ff, white);
 }
 
 footer {

@@ -43,24 +43,9 @@ const saveProductToLocalStorage = (product) => {
     } else {
         //stocker produits dans une variable tout ce qui est dans le local storage
         let productStorage = localStorage.getItem('basket')
-        
     }
-    
+    localStorage.setItem('basket', JSON.stringify([product]))
     //créée une deuxieme variable qui va contenir l'id du produit avec celui qui est dans le storage methode filter
-   
-
-    // Si il existe, on recupere l'element dans le tableau 
-    //const existe = product.find(item => item._id === id);
-
-    //Si il est existe, on additione les quantité
-
-    // if (existe) {
-    //     existe.quantite = existe.quantite + quantite;
-
-    // } else { // si existe pas on rentre simplement l'article avec sa quantite selectioné
-    //     product_id.quantite = quantite;
-    //     articles.push(product_id);
-    // }
 }
 //si la longeur du tableau du produit déjà sélectionner est supérieur à zéro augmente de 1 la quantité sinon else on ajoute dans le tableau
 
