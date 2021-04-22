@@ -71,7 +71,7 @@
 
             <!--Email-->
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required pattern=>
 
             <!--Adress-->
             <label for="address">Adresse:</label><br>
@@ -80,9 +80,12 @@
             <!--City-->
             <label for="city">Ville:</label><br>
             <input type="text" id="city" name="city" required>
+            <!--zip code-->
+            <label for="zipcode" class="label">Code postal</label>
+              <input type="text" name="zipcode" id="zipcode" class="input" required />
 
             <!--Submit Button-->
-            <button class="btnOrder" id="orderBtn" type="submit" disabled="disabled">Commander</button>
+            <input class="btnOrder" id="orderBtn" type="submit" disabled="disabled"></input>
         </form>
     </main>
     <br>
