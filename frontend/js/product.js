@@ -28,36 +28,38 @@ function displayProduct(product) {
     cloneElt.getElementById('productColorsOption').textContent = product.colors
     document.getElementById('productsList').appendChild(cloneElt)
 }
-//textContent = product.colors
-const templateElt = document.querySelector('#templateProduct')
-const btn = document.querySelector('#addToCart');
-const lineName = document.querySelector('#name')
-const lineQuantity = document.querySelector('#quantity')
-const linePrice = document.querySelector('#price')
 
 const saveProductToLocalStorage = (product) => {
     //créée une fonction qui va mettre au local storage
-
     if (localStorage.getItem('basket') == null) {
         localStorage.setItem('basket', JSON.stringify([product]))
     } else {
         //stocker produits dans une variable tout ce qui est dans le local storage
-        let productStorage = localStorage.getItem('basket')
+        let cart =  JSON.parse(localStorage.getItem('basket')) 
+        //créée une deuxieme variable qui va contenir l'id du produit avec celui qui est dans le storage methode filter
+        let productAlreadySelected = cart.filter((teddy) => teddy.id === product.id)
+        //si la longeur du tableau du produit déjà sélectionner est supérieur à zéro augmente de 1 la quantité sinon else on ajoute dans le tableau
+        if (productAlreadySelected.lenght > 0) {
+            productAlreadySelected[0].quantity++
+        } else {
+            cart.push(product)
+        }
+        localStorage.setItem('basket', JSON.stringify([product]))
     }
-    localStorage.setItem('basket', JSON.stringify([product]))
-    //créée une deuxieme variable qui va contenir l'id du produit avec celui qui est dans le storage methode filter
 }
-//si la longeur du tableau du produit déjà sélectionner est supérieur à zéro augmente de 1 la quantité sinon else on ajoute dans le tableau
-
-//après le dernier else on redefini le local storage comme la ligne 45 
-
 
 (async () => {
     const teddy = await getProduct()
     hydratePage(teddy)
-    btn.addEventListener('click', (event) => {
-        //alert('le produit a bien été ajouté au panier')
-        console.log();
-        saveProductToLocalStorage(teddy)
+    let teddySelected = { 
+        name: teddy.name,
+        price: teddy.price,
+        id: teddy._id,
+        quantity: 1
+    }
+    let btnAddBasket = document.querySelector('#addToCart')
+    btnAddBasket.addEventListener('click', () => {
+        alert('le produit a bien été ajouté au panier')
+        saveProductToLocalStorage(teddySelected)
     })
 })()
