@@ -1,7 +1,6 @@
 // Recuperer les données sur le LocalStorage
 let products =  JSON.parse(localStorage.getItem('basket'));
 
-
 if (!products || products.length === 0) {
     window.alert('le panier est vide veuillez choisir un compagnon');
     window.location.href = "index.html";
@@ -25,14 +24,13 @@ function onPanier() {
         td[0].textContent = result.name;
         td[1].textContent = result.quantite;
         td[2].textContent = `${result.price / 100} €`;
-        td[3].textContent = `${result.price * result.quantite  } / 100 €`;
+        td[3].textContent = `${result.price * result.quantite / 100}`;
 
         container.appendChild(clone);
     }
 
     let prixTotalDiv = document.querySelector(".prixtotal");
     prixTotalDiv.textContent = `${prixTotal} €`;
-
 
     //Placement de ma variable prixTotal dans le localStorage
     localStorage.setItem("prixTotal", JSON.stringify(prixTotal));
@@ -84,7 +82,6 @@ async function onClickButton(e) {
     // Redirection vers la page Confirmation de Commande
     window.location.href = "confirme.html";
 };
-
 
 //Selection du bouton "COMMANDER"
 const btnEnvoyerFormulaire = document.querySelector("#orderBtn");
