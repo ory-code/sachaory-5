@@ -1,8 +1,6 @@
 // Recuperer les données sur le LocalStorage
-let productsJson = localStorage.getItem('basket');
-let products = productsJson && JSON.parse(productsJson);
+let products =  JSON.parse(localStorage.getItem('basket'));
 
-console.log(products);
 
 if (!products || products.length === 0) {
     window.alert('le panier est vide veuillez choisir un compagnon');
@@ -17,7 +15,7 @@ function onPanier() {
 
 
     for (const result of products) {
-
+        console.log(result);
         let clone = document.importNode(template.content, true);
         let td = clone.querySelectorAll("td");
 
@@ -27,7 +25,7 @@ function onPanier() {
         td[0].textContent = result.name;
         td[1].textContent = result.quantite;
         td[2].textContent = `${result.price / 100} €`;
-        td[3].textContent = `${result.price * result.quantite / 100} €`;
+        td[3].textContent = `${result.price * result.quantite  } / 100 €`;
 
         container.appendChild(clone);
     }
