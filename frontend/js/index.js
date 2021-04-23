@@ -2,9 +2,10 @@
   const products = await getProducts()
   hydratePage(products)
 })()
-//http://localhost:3000/api/teddies
+
+//https://ab-p5-api.herokuapp.com/api/teddies
 function getProducts() {
-  return fetch("https://ab-p5-api.herokuapp.com/api/teddies")
+  return fetch("http://localhost:3000/api/teddies")
     .then((httpBodyResponse) => httpBodyResponse.json())
     .then((products) => products)
     .catch((error) => {

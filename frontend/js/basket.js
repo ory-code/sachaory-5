@@ -113,55 +113,19 @@ function sendOrder() {
     }
 }
 
+const requestOptions = {
+    method: 'POST',
+    body: JSON.stringify(order),
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+  }
 
-
-// async function onClickButton(e) {
-
-//     e.preventDefault();
-
-//     //Mettre les valeurs du Formulaire dans un objet
-//     const contact = {
-//         firstName: document.querySelector("#firstName").value,
-//         lastName: document.querySelector("#lastName").value,
-//         email: document.querySelector("#email").value,
-//         city: document.querySelector("#city").value,
-//         address: document.querySelector("#address").value
-//     }
-
-//     // Un Tableau contenant les _id de chaque produits 
-//     const idProducts = products.map(product => product._id);
-
-//     //Mettre les valeurs Formulaire + les produits selectionnées dans un objet a envoyer vers le serveur
-//     const valeurEnvoyer = {
-//         products: idProducts,
-//         contact: contact
-//     }
-//     console.log("valeurEnvoyer");
-//     console.log(valeurEnvoyer);
-
-
-//     // Methode Post pour generer un code de commande
-//     const rawResponse = await fetch("https://ab-p5-api.herokuapp.com/api/teddies/order", {
-//         method: 'POST',
-//         headers: {
-//             'Accept': 'application/json',
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(valeurEnvoyer)
-//     });
-//     const content = await rawResponse.json();
-
-//     localStorage.setItem("orderId", content.orderId);
-
-//     console.log(content);
-//     console.log(valeurEnvoyer);
-
-//     // Redirection vers la page Confirmation de Commande
-//     window.location.href = "order.html";
-// };
-
-// //Selection du bouton "COMMANDER"
-// const btnEnvoyerFormulaire = document.querySelector("#orderBtn");
-
-// //addEventListener du bouton "COMMANDER"
-// btnEnvoyerFormulaire.addEventListener("click", (envoyer) => onClickButton(envoyer));
+  fetch(`${apiUrl}/api/teddies/order`, requestOptions)
+  .then((response) => response.json())
+  .then((json) => {
+    console.log(json)
+    localStorage.removeItem('shoppingCart')
+    window.location.href = `${window.location.origin}/orderStatus.html?orderId=${json.orderId}`
+  })
+  .catch(() => {
+    alert(error)
+  })

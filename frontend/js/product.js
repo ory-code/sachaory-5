@@ -4,7 +4,7 @@ const id = new URL(document.location).searchParams.get('id');
 const btnAddBasket = document.querySelector('#addToCart');
 
 function getProduct() {
-    return fetch(`https://ab-p5-api.herokuapp.com/api/teddies/${id}`)
+    return fetch(`http://localhost:3000/api/teddies/${id}`)
         .then((response) => response.json())
         .then((product) => product)
         .catch((error) => {
