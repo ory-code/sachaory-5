@@ -23,7 +23,7 @@ function onPanier() {
         td[0].textContent = result.name;
         td[1].textContent = result.quantity;
         td[2].textContent = `${result.price / 100} €`;
-        td[3].textContent = `${result.price * result.quantity / 100}`;
+        td[3].textContent = `${result.price * result.quantity / 100} €`;
 
         container.appendChild(clone);
     }
@@ -131,5 +131,4 @@ btnOrderElt.addEventListener('submit', () => {
         .catch(() => {
             alert(error)
         })
-
 })

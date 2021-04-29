@@ -2,7 +2,6 @@ body {
     margin: 0;
     font-family: roboto;
 }
-
 header {
     display: flex;
     justify-content: flex-end;
@@ -59,8 +58,6 @@ h1 {
 }
 
 /*productpage*/
-
-
 @media (max-width:1000px) {
     .figProduct {
         display: flex;
@@ -83,7 +80,6 @@ h1 {
 
 
 }
-
 
 .headerProduct {
     display: flex;
@@ -135,14 +131,7 @@ select {
     cursor: pointer;
     margin: 20px;
 }
-
-
-
-
-
 /* basket page*/
-
-
 main {
     display: flex;
     flex-direction: column;
@@ -150,7 +139,7 @@ main {
 
 }
 
-section {
+.basketSection {
     width: 100%;
     width: 100%;
     display: flex;
@@ -176,11 +165,6 @@ td {
     justify-content: center;
     display: flex;
 }
-
-
-
-
-
 #totalPrice {
     text-align: center;
 
