@@ -1,3 +1,5 @@
+const getDataOrder = json.parse(localStorage.getItem)()
+
 function localVariable() {
     //Recuperer la valeur de prixTotal dans le localStorage et la Parser
     //prixTotalJSON = localStorage.getItem("prixTotal");

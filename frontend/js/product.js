@@ -19,14 +19,10 @@ function hydratePage(prod) {
 function displayProduct(product) {
     const templateElt = document.querySelector('#templateProduct');
     const cloneElt = document.importNode(templateElt.content, true);
-
     cloneElt.getElementById('productImage').src = product.imageUrl;
     cloneElt.getElementById('productName').textContent = product.name;
-    cloneElt.getElementById('productPrice').textContent = `${
-    product.price / 100
-  }.00 €`;
-    cloneElt.getElementById('productDescription').textContent =
-        product.description;
+    cloneElt.getElementById('productPrice').textContent = `${product.price / 100}.00 €`;
+    cloneElt.getElementById('productDescription').textContent =product.description;
     cloneElt.getElementById('productColorsOption').textContent = product.colors;
     document.getElementById('productsList').appendChild(cloneElt);
 }
@@ -72,6 +68,7 @@ btnAddBasket.addEventListener('click', async () => {
     };
 
     saveProductToLocalStorage(selectedTeddy);
+    console.log(selectedTeddy);
 
     alert('le produit a bien été ajouté au panier');
 });
