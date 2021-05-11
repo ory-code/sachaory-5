@@ -1,7 +1,7 @@
 // Recuperer les données sur le LocalStorage
-let products = JSON.parse(localStorage.getItem('basket'));
+let productsData = JSON.parse(localStorage.getItem('basket'));
 
-if (!products || products.length === 0) {
+if (!productsData || productsData.length === 0) {
     window.alert('le panier est vide veuillez choisir un compagnon');
     window.location.href = "index.html";
 }
@@ -13,7 +13,7 @@ function onPanier() {
     let prixTotal = 0;
 
 
-    for (const result of products) {
+    for (const result of productsData) {
         console.log(result);
         let clone = document.importNode(template.content, true);
         let td = clone.querySelectorAll("td");
@@ -92,7 +92,7 @@ btnOrderElt.addEventListener('click', (event) => {
     const email = document.getElementById('email').value
     const city = document.getElementById('city').value
     const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-    
+
     // if ((
     //         firstname.length > 1 &&
     //         lastname.length > 1 &&
@@ -105,8 +105,13 @@ btnOrderElt.addEventListener('click', (event) => {
     //     return
     // }
 
-let products = []
-//faire une boucle for localstorage id avec push 
+    
+    //faire une boucle for localstorage id avec push 
+     let products = []
+     for (products of productsData) {
+         
+     }
+    
     const order = {
         contact: {
             firstName: firstname,
