@@ -17,7 +17,6 @@ function onPanier() {
         console.log(result);
         let clone = document.importNode(template.content, true);
         let td = clone.querySelectorAll("td");
-
         // Prendre le prix total d'un article et additioner le prix total de tous les articles present 
         prixTotal = result.price * result.quantity / 100 + prixTotal;
         td[0].textContent = result.name;
@@ -25,8 +24,13 @@ function onPanier() {
         td[2].textContent = `${result.price / 100} €`;
         td[3].textContent = `${result.price * result.quantity / 100} €`;
 
+        for (products in result) {
+            console.log(`${products}`);
+        }
         container.appendChild(clone);
     }
+    
+
 
     let prixTotalDiv = document.querySelector(".prixtotal");
     prixTotalDiv.textContent = `${prixTotal} €`;
@@ -105,13 +109,9 @@ btnOrderElt.addEventListener('click', (event) => {
     //     return
     // }
 
-    
+
     //faire une boucle for localstorage id avec push 
-     let products = []
-     for (products of productsData) {
-         
-     }
-    
+    let products = []
     const order = {
         contact: {
             firstName: firstname,
