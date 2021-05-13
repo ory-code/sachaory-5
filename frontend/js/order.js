@@ -1,18 +1,5 @@
-fetch(`http://localhost:3000/api/teddies/order`)
-    .then(function (res) {
-        if (res.ok) {
-            return res.json();
-        }
-    })
-    .then(function (value) {
-        console.log(value);
-    })
-    .catch(function (err) {
-        // Une erreur est survenue
-    });
-
-
-// const getDataOrder = JSON.parse(localStorage.getItem('submit'));
+const getDataOrder = JSON.parse(localStorage.getItem('order'));
+console.log(getDataOrder);
 
 // function localVariable() {
 //     //Recuperer la valeur de prixTotal dans le localStorage et la Parser

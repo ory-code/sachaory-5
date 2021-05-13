@@ -1,6 +1,6 @@
 // Recuperer les données sur le LocalStorage
 let productsData = JSON.parse(localStorage.getItem('basket'));
-
+let products = []
 if (!productsData || productsData.length === 0) {
     window.alert('le panier est vide veuillez choisir un compagnon');
     window.location.href = "index.html";
@@ -11,6 +11,7 @@ function onPanier() {
     const container = document.querySelector('tbody');
     let template = document.querySelector('#productrow');
     let prixTotal = 0;
+    
 
 
     for (const result of productsData) {
@@ -23,12 +24,10 @@ function onPanier() {
         td[1].textContent = result.quantity;
         td[2].textContent = `${result.price / 100} €`;
         td[3].textContent = `${result.price * result.quantity / 100} €`;
-
-        for (products in result) {
-            console.log(`${products}`);
-        }
         container.appendChild(clone);
+        products.push(result.id)
     }
+    
     let prixTotalDiv = document.querySelector(".prixtotal");
     prixTotalDiv.textContent = `${prixTotal} €`;
 
@@ -90,7 +89,7 @@ btnOrderElt.addEventListener('click', (event) => {
     const city = document.getElementById('city').value
     const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
 
-    if ((
+    if (!(
             firstname.length > 1 &&
             lastname.length > 1 &&
             emailRegex.test(email) &&
@@ -103,7 +102,7 @@ btnOrderElt.addEventListener('click', (event) => {
 
 
     //faire une boucle for localstorage id avec push 
-    let products = []
+    
     const order = {
         contact: {
             firstName: firstname,
@@ -118,14 +117,15 @@ btnOrderElt.addEventListener('click', (event) => {
         method: 'POST',
         body: JSON.stringify(order),
         headers: {
-            'Content-Type': 'application/json; charset=utf-8'
+            'Content-Type': 'application/json'
         },
     }
-    fetch(`http://localhost:3000/api/teddies/order`, requestOptions)
+    fetch('http://localhost:3000/api/teddies/order', requestOptions)
         .then((response) => response.json())
-        .then((json) => {
-            console.log(json)
-            window.location.href = `order.html`
+        .then((response) => {
+            let jsonOrder = JSON.stringify(response)
+            localStorage.setItem('order', jsonOrder)
+            window.location.href = 'order.html'
         })
         .catch(() => {
             alert(error)
