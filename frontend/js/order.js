@@ -1,36 +1,40 @@
 const getDataOrder = JSON.parse(localStorage.getItem('order'));
 console.log(getDataOrder);
 
-// function localVariable() {
-//     //Recuperer la valeur de prixTotal dans le localStorage et la Parser
-//     //prixTotalJSON = localStorage.getItem("prixTotal");
-//     let prixTotal =  JSON.parse(localStorage.getItem("prixTotal"));
+function localVariable() {
+    //Recuperer la valeur de prixTotal dans le localStorage et la Parser
+    //prixTotalJSON = localStorage.getItem("prixTotal");
+    let prixTotal =  JSON.parse(localStorage.getItem("prixTotal"));
 
-//     //Selectionné la div corespondante 
-//     let prixLocalDiv = document.querySelector(".prixlocal");
+    //Selectionné la div corespondante 
+    let prixLocalDiv = document.querySelector(".prixlocal");
 
-//     // Afficher la valeur de prixTotal du localStorage
-//     prixLocalDiv.textContent =`${prixTotal} €`;
-// } 
+    // Afficher la valeur de prixTotal du localStorage
+    prixLocalDiv.textContent =`${prixTotal} €`;
+} 
 
-// localVariable();
+localVariable();
 
 
-// function orderIdAndReturn() {
-//     // Selectionnez la div qui affichera l'OrderId
-//     let orderId = document.querySelector(".orderid");
+function orderIdAndReturn() {
+    // Selectionnez la div qui affichera l'OrderId
+    let orderId = document.querySelector(".orderid");
 
-//     // Afficher l'OrderId dans la confirmation
-//     orderId.textContent = localStorage.getItem("orderId");
+    // Afficher l'OrderId dans la confirmation
+    orderId.textContent = getDataOrder.orderId;
 
-//     // Selection du bouton retour accueil
-//     const btnReturn = document.querySelector("#returnaccueil");
+     //Supprimer le Panier
+     localStorage.removeItem('basket');
 
-//     //addEventListener du bouton "COMMANDER"
-//     btnReturn.addEventListener("click", (e) => {
-//         // Redirection vers la page Confirmation de Commande
-//         window.location.href="index.html";
-//     })
-// }
 
-// orderIdAndReturn();
+    // Selection du bouton retour accueil
+    const btnReturn = document.querySelector("#returnaccueil");
+
+    // //addEventListener du bouton "COMMANDER"
+    // btnReturn.addEventListener("click", (e) => {
+    //     // Redirection vers la page Confirmation de Commande
+    //     window.location.href="index.html";
+    // })
+}
+
+orderIdAndReturn();
