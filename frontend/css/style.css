@@ -203,3 +203,15 @@ footer {
     background: linear-gradient(45deg, #ffcd6f, #ebccf7, transparent);
     height: max-content;
 }
+
+/*------order*/
+.orderPage {
+    font-size: 15px;
+    font-weight: lighter;
+}
+.prix {
+    margin: 15px;
+}
+.commande {
+    margin: 15px;
+}
