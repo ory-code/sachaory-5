@@ -18,7 +18,6 @@ function getProducts() {
 function hydratePage(productsPara) {
   // Remove loading boxes
   document.getElementById('productsList').innerHTML = ''
-
   // Loop over all products and displays them
   productsPara.forEach((product) => {
     displayProduct(product)
@@ -28,10 +27,8 @@ function hydratePage(productsPara) {
 function displayProduct(product) {
   // Get template
   const templateElt = document.getElementById('product')
-
   // Clone template
   const cloneElt = document.importNode(templateElt.content, true)
-
   // Hydrate template
   cloneElt.getElementById('productImage').src = product.imageUrl
   cloneElt.getElementById('productName').textContent = product.name
@@ -39,7 +36,6 @@ function displayProduct(product) {
   cloneElt.getElementById('productDescription').textContent = product.description
   cloneElt.getElementById('productLink').href = `product.html?id=${product._id}`
   //cloneElt.getElementById('productLink').href = `/frontend/product.html?id=${product._id}`
-
   // Display template
   document.getElementById('productsList').appendChild(cloneElt)
 }

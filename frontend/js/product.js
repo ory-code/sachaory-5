@@ -1,8 +1,6 @@
 'use strict';
-
 const id = new URL(document.location).searchParams.get('id');
 const btnAddBasket = document.querySelector('#addToCart');
-
 function getProduct() {
     return fetch(`http://localhost:3000/api/teddies/${id}`)
         .then((response) => response.json())
@@ -26,8 +24,6 @@ function displayProduct(product) {
     cloneElt.getElementById('productColorsOption').textContent = product.colors;
     document.getElementById('productsList').appendChild(cloneElt);
 }
-
-
 
 const saveProductToLocalStorage = (product) => {
     if (!localStorage.getItem('basket')) {
@@ -68,7 +64,7 @@ btnAddBasket.addEventListener('click', async () => {
     };
 
     saveProductToLocalStorage(selectedTeddy);
-    console.log(selectedTeddy);
+    
 
     alert('le produit a bien été ajouté au panier');
 });

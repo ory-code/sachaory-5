@@ -15,7 +15,7 @@ function onPanier() {
 
 
     for (const result of productsData) {
-        console.log(result);
+        
         let clone = document.importNode(template.content, true);
         let td = clone.querySelectorAll("td");
         // Prendre le prix total d'un article et additioner le prix total de tous les articles present 

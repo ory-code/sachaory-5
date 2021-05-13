@@ -1,5 +1,4 @@
 const getDataOrder = JSON.parse(localStorage.getItem('order'));
-console.log(getDataOrder);
 
 function localVariable() {
     //Recuperer la valeur de prixTotal dans le localStorage et la Parser
@@ -15,7 +14,6 @@ function localVariable() {
 
 localVariable();
 
-
 function orderIdAndReturn() {
     // Selectionnez la div qui affichera l'OrderId
     let orderId = document.querySelector(".orderid");
@@ -26,15 +24,6 @@ function orderIdAndReturn() {
      //Supprimer le Panier
      localStorage.removeItem('basket');
 
-
-    // Selection du bouton retour accueil
-    const btnReturn = document.querySelector("#returnaccueil");
-
-    // //addEventListener du bouton "COMMANDER"
-    // btnReturn.addEventListener("click", (e) => {
-    //     // Redirection vers la page Confirmation de Commande
-    //     window.location.href="index.html";
-    // })
 }
 
 orderIdAndReturn();
