@@ -11,11 +11,8 @@ function onPanier() {
     const container = document.querySelector('tbody');
     let template = document.querySelector('#productrow');
     let prixTotal = 0;
-    
-
-
     for (const result of productsData) {
-        
+
         let clone = document.importNode(template.content, true);
         let td = clone.querySelectorAll("td");
         // Prendre le prix total d'un article et additioner le prix total de tous les articles present 
@@ -27,27 +24,24 @@ function onPanier() {
         container.appendChild(clone);
         products.push(result.id)
     }
-    
     let prixTotalDiv = document.querySelector(".prixtotal");
     prixTotalDiv.textContent = `${prixTotal} €`;
-
     //Placement de ma variable prixTotal dans le localStorage
     localStorage.setItem("prixTotal", JSON.stringify(prixTotal));
 }
 onPanier();
 
 // // Input validity
+watchValidity(document.getElementById('firstName'), (e) => e.target.value.length > 1)
+watchValidity(document.getElementById('lastName'), (e) => e.target.value.length > 1)
+watchValidity(document.getElementById('email'), (e) => {
+    const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+    return emailRegex.test(e.target.value)
+})
+watchValidity(document.getElementById('address'), (e) => e.target.value.length > 6)
+watchValidity(document.getElementById('city'), (e) => e.target.value.length > 1)
+
 function watchValidity(elt, condition) {
-    watchValidity(document.getElementById('firstName'), (e) => e.target.value.length > 1)
-    watchValidity(document.getElementById('lastName'), (e) => e.target.value.length > 1)
-    watchValidity(document.getElementById('email'), (e) => {
-        const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-        return emailRegex.test(e.target.value)
-    })
-    watchValidity(document.getElementById('address'), (e) => e.target.value.length > 6)
-    watchValidity(document.getElementById('city'), (e) => e.target.value.length > 1)
-
-
     elt.oninput = (e) => {
         if (condition(e)) {
             validInputElt(e.target)
@@ -78,7 +72,7 @@ function neutralInputElt(elt) {
 }
 
 
-
+//envoie donnée du formulaire 
 const btnOrderElt = document.querySelector('.btnOrder')
 btnOrderElt.addEventListener('click', (event) => {
     event.preventDefault()
@@ -88,7 +82,7 @@ btnOrderElt.addEventListener('click', (event) => {
     const email = document.getElementById('email').value
     const city = document.getElementById('city').value
     const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
-
+    //condition d'envoie pour formulaire
     if (!(
             firstname.length > 1 &&
             lastname.length > 1 &&
@@ -99,10 +93,6 @@ btnOrderElt.addEventListener('click', (event) => {
         alert("Veuillez remplir les champs correctements avant de procéder au paiement")
         return
     }
-
-
-    //faire une boucle for localstorage id avec push 
-    
     const order = {
         contact: {
             firstName: firstname,
