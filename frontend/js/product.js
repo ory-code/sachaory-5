@@ -9,11 +9,10 @@ function getProduct() {
             alert("La connexion au serveur n'a pas pu être effectué.");
         });
 }
-
+//composée produit
 function hydratePage(prod) {
     displayProduct(prod);
 }
-
 function displayProduct(product) {
     const templateElt = document.querySelector('#templateProduct');
     const cloneElt = document.importNode(templateElt.content, true);
@@ -24,7 +23,7 @@ function displayProduct(product) {
     cloneElt.getElementById('productColorsOption').textContent = product.colors;
     document.getElementById('productsList').appendChild(cloneElt);
 }
-
+//envoie donnée au local storage
 const saveProductToLocalStorage = (product) => {
     if (!localStorage.getItem('basket')) {
         localStorage.setItem('basket', JSON.stringify([product]));
