@@ -12,7 +12,6 @@ function onPanier() {
     let template = document.querySelector('#productrow');
     let prixTotal = 0;
     for (const result of productsData) {
-
         let clone = document.importNode(template.content, true);
         let td = clone.querySelectorAll("td");
         // Prendre le prix total d'un article et additioner le prix total de tous les articles present 
@@ -33,11 +32,16 @@ onPanier();
 
 // // Input validity
 watchValidity(document.getElementById('firstName'), (e) => e.target.value.length > 1)
+//      const firstNameRegex = /^[-'a-zA-Z0-9À-ÖØ-öø-ÿ\s]+$/ 
+//      return firstNameRegex.test(e.target.value)
+// })
 watchValidity(document.getElementById('lastName'), (e) => e.target.value.length > 1)
+
 watchValidity(document.getElementById('email'), (e) => {
     const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     return emailRegex.test(e.target.value)
 })
+
 watchValidity(document.getElementById('address'), (e) => e.target.value.length > 6)
 watchValidity(document.getElementById('city'), (e) => e.target.value.length > 1)
 
@@ -76,7 +80,8 @@ function neutralInputElt(elt) {
 const btnOrderElt = document.querySelector('.btnOrder')
 btnOrderElt.addEventListener('click', (event) => {
     event.preventDefault()
-    const firstname = document.getElementById('firstName').value
+    const firstName = document.getElementById('firstName').value
+    //const firstNameRegex = /^[-'a-zA-Z0-9À-ÖØ-öø-ÿ\s]+$/
     const lastname = document.getElementById('lastName').value
     const address = document.getElementById('address').value
     const email = document.getElementById('email').value
@@ -84,7 +89,8 @@ btnOrderElt.addEventListener('click', (event) => {
     const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     //condition d'envoie pour formulaire
     if (!(
-            firstname.length > 1 &&
+            firstName.length > 1 &&
+            //firstNameRegex.test(firstName) &&
             lastname.length > 1 &&
             emailRegex.test(email) &&
             address.length > 6 &&
@@ -95,7 +101,7 @@ btnOrderElt.addEventListener('click', (event) => {
     }
     const order = {
         contact: {
-            firstName: firstname,
+            firstName: firstName,
             lastName: lastname,
             address: address,
             city: city,
