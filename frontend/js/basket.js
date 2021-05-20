@@ -5,7 +5,6 @@ if (!productsData || productsData.length === 0) {
     window.alert('le panier est vide veuillez choisir un compagnon');
     window.location.href = "index.html";
 }
-
 function onPanier() {
     // Afficher les données sur la page Web Si les conditions du if sont remplies
     const container = document.querySelector('tbody');
@@ -31,19 +30,23 @@ function onPanier() {
 onPanier();
 
 // // Input validity
-watchValidity(document.getElementById('firstName'), (e) => e.target.value.length > 1)
-//      const firstNameRegex = /^[-'a-zA-Z0-9À-ÖØ-öø-ÿ\s]+$/ 
-//      return firstNameRegex.test(e.target.value)
-// })
-watchValidity(document.getElementById('lastName'), (e) => e.target.value.length > 1)
-
+watchValidity(document.getElementById('firstName'), (e) => {
+    const firstNameRegex = /^[a-z ,.'-]+$/i
+    return firstNameRegex.test(e.target.value)
+})
+watchValidity(document.getElementById('lastName'), (e) => {
+    const lastNameRegex = /^[a-z ,.'-]+$/i
+    return lastNameRegex.test(e.target.value)
+})
 watchValidity(document.getElementById('email'), (e) => {
     const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     return emailRegex.test(e.target.value)
 })
-
 watchValidity(document.getElementById('address'), (e) => e.target.value.length > 6)
-watchValidity(document.getElementById('city'), (e) => e.target.value.length > 1)
+watchValidity(document.getElementById('city'), (e) => {
+    const cityRegex = /^[a-z ,.'-]+$/i
+    return cityRegex.test(e.target.value)
+})
 
 function watchValidity(elt, condition) {
     elt.oninput = (e) => {
@@ -81,28 +84,34 @@ const btnOrderElt = document.querySelector('.btnOrder')
 btnOrderElt.addEventListener('click', (event) => {
     event.preventDefault()
     const firstName = document.getElementById('firstName').value
-    //const firstNameRegex = /^[-'a-zA-Z0-9À-ÖØ-öø-ÿ\s]+$/
-    const lastname = document.getElementById('lastName').value
+    const firstNameRegex = /^[a-z ,.'-]+$/i
+    const lastName = document.getElementById('lastName').value
+    const lastNameRegex = /^[a-z ,.'-]+$/i
     const address = document.getElementById('address').value
     const email = document.getElementById('email').value
-    const city = document.getElementById('city').value
     const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+    const city = document.getElementById('city').value
+    const cityRegex = /^[a-z ,.'-]+$/i
+
     //condition d'envoie pour formulaire
     if (!(
             firstName.length > 1 &&
-            //firstNameRegex.test(firstName) &&
-            lastname.length > 1 &&
+            firstNameRegex.test(firstName) &&
+            lastName.length > 1 &&
+            lastNameRegex.test(lastName) &&
             emailRegex.test(email) &&
             address.length > 6 &&
-            city.length > 1
+            city.length > 1 &&
+            cityRegex.test(city) 
         )) {
+
         alert("Veuillez remplir les champs correctements avant de procéder au paiement")
         return
     }
     const order = {
         contact: {
             firstName: firstName,
-            lastName: lastname,
+            lastName: lastName,
             address: address,
             city: city,
             email: email,
