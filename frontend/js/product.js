@@ -1,6 +1,7 @@
 'use strict';
 const id = new URL(document.location).searchParams.get('id');
 const btnAddBasket = document.querySelector('#addToCart');
+
 function getProduct() {
     return fetch(`http://localhost:3000/api/teddies/${id}`)
         .then((response) => response.json())
@@ -9,6 +10,7 @@ function getProduct() {
             alert("La connexion au serveur n'a pas pu être effectué.");
         });
 }
+
 //composée produit
 function hydratePage(prod) {
     displayProduct(prod);
@@ -19,9 +21,21 @@ function displayProduct(product) {
     cloneElt.getElementById('productImage').src = product.imageUrl;
     cloneElt.getElementById('productName').textContent = product.name;
     cloneElt.getElementById('productPrice').textContent = `${product.price / 100}.00 €`;
-    cloneElt.getElementById('productDescription').textContent =product.description;
-    cloneElt.getElementById('productColorsOption').textContent = product.colors;
+    cloneElt.getElementById('productDescription').textContent = product.description;
     document.getElementById('productsList').appendChild(cloneElt);
+    //let selectColor = document.querySelector('.selectOption')
+    const selectColorElement = document.querySelector('#colors')
+    //let newOption = document.createElement('option')
+    for (let color of product.colors) {
+        selectColorElement[selectColorElement.options.length] = new Option(color, selectColorElement.options.length);
+      }
+    //console.log(selectColor);
+    // for (let colorOption of product.colors) {
+    //     newOption = colorOption 
+    //     selectColorElement.innerHTML = newOption
+    //     console.log(selectColorElement);
+    // }
+   
 }
 //envoie donnée au local storage
 const saveProductToLocalStorage = (product) => {
