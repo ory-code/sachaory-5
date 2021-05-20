@@ -15,6 +15,7 @@ function getProduct() {
 function hydratePage(prod) {
     displayProduct(prod);
 }
+
 function displayProduct(product) {
     const templateElt = document.querySelector('#templateProduct');
     const cloneElt = document.importNode(templateElt.content, true);
@@ -28,16 +29,10 @@ function displayProduct(product) {
     //let newOption = document.createElement('option')
     for (let color of product.colors) {
         selectColorElement[selectColorElement.options.length] = new Option(color, selectColorElement.options.length);
-      }
-    //console.log(selectColor);
-    // for (let colorOption of product.colors) {
-    //     newOption = colorOption 
-    //     selectColorElement.innerHTML = newOption
-    //     console.log(selectColorElement);
-    // }
-   
+    }
+
 }
-//envoie donnée au local storage
+//envoie donnée au local storagep
 const saveProductToLocalStorage = (product) => {
     if (!localStorage.getItem('basket')) {
         localStorage.setItem('basket', JSON.stringify([product]));
@@ -77,7 +72,7 @@ btnAddBasket.addEventListener('click', async () => {
     };
 
     saveProductToLocalStorage(selectedTeddy);
-    
+
 
     alert('le produit a bien été ajouté au panier');
 });

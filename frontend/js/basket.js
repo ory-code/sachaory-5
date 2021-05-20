@@ -5,6 +5,7 @@ if (!productsData || productsData.length === 0) {
     window.alert('le panier est vide veuillez choisir un compagnon');
     window.location.href = "index.html";
 }
+
 function onPanier() {
     // Afficher les données sur la page Web Si les conditions du if sont remplies
     const container = document.querySelector('tbody');
@@ -102,7 +103,7 @@ btnOrderElt.addEventListener('click', (event) => {
             emailRegex.test(email) &&
             address.length > 6 &&
             city.length > 1 &&
-            cityRegex.test(city) 
+            cityRegex.test(city)
         )) {
 
         alert("Veuillez remplir les champs correctements avant de procéder au paiement")
